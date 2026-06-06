@@ -10,7 +10,7 @@ This project demonstrates Infrastructure as Code (IaC), secure content delivery,
 
 The website is deployed through Amazon CloudFront and delivered globally using AWS edge locations.
 
-**Live Demo:**
+### Live Demo
 
 https://d28xs5hc1on3kz.cloudfront.net
 
@@ -18,11 +18,13 @@ https://d28xs5hc1on3kz.cloudfront.net
 
 ## Live Website (Initial Deployment)
 
-![AWS S3 CloudFront Static Website](screenshots/10-website-live-cloudfront.png)
+![AWS S3 CloudFront Static Website](./screenshots/10-website-live-cloudfront.png)
 
 ## Enhanced Portfolio Website
 
-![Enhanced Portfolio Website](screenshots/11-enhanced-portfolio-website.png)
+![Enhanced Portfolio Website Architecture](./screenshots/11-enhanced-portfolio-website-snip1.png)
+
+![Enhanced Portfolio Website Technical Journey](./screenshots/11-enhanced-portfolio-website-snip2.png)
 
 ---
 
@@ -33,13 +35,13 @@ The objective of this project was to design and deploy a secure static website a
 The solution leverages:
 
 * Terraform for Infrastructure as Code
-* Amazon S3 for static website content storage
+* Amazon S3 for static website hosting
 * Amazon CloudFront for global content delivery
 * Origin Access Control (OAC) for secure S3 access
 * IAM Policies for controlled permissions
 * GitHub for version control and project documentation
 
-The architecture follows modern AWS security practices by ensuring website content is delivered through CloudFront rather than accessed directly from the S3 bucket.
+The architecture follows AWS security best practices by ensuring website content is delivered through CloudFront rather than accessed directly from the S3 bucket.
 
 ---
 
@@ -56,21 +58,21 @@ flowchart LR
     U --> CF
     CF --> OAC
     OAC --> S3
-    OAC --> WEB
+    S3 --> WEB
 ```
 
 ---
 
 # ☁ AWS Services Used
 
-| Service                     | Purpose                               |
-| --------------------------- | ------------------------------------- |
-| Amazon S3                   | Static website hosting                |
-| Amazon CloudFront           | Global content delivery               |
-| Origin Access Control (OAC) | Secure CloudFront-to-S3 communication |
-| IAM Policy                  | Controlled access permissions         |
-| Terraform                   | Infrastructure provisioning           |
-| GitHub                      | Version control and documentation     |
+| Service                     | Purpose                                   |
+| --------------------------- | ----------------------------------------- |
+| Amazon S3                   | Static website hosting                    |
+| Amazon CloudFront           | Global content delivery                   |
+| Origin Access Control (OAC) | Secure CloudFront-to-S3 communication     |
+| IAM Policies                | Access management                         |
+| Terraform                   | Infrastructure provisioning               |
+| GitHub                      | Version control and project documentation |
 
 ---
 
@@ -78,7 +80,9 @@ flowchart LR
 
 ### 1. Repository Setup
 
-Created a GitHub repository and initialized the Terraform project structure.
+* Created GitHub repository
+* Built Terraform project structure
+* Configured VS Code environment
 
 ### 2. Infrastructure Configuration
 
@@ -86,8 +90,8 @@ Configured:
 
 * AWS Provider
 * Terraform Variables
-* Outputs
-* Terraform State Management
+* Terraform Outputs
+* State Management
 
 ### 3. Amazon S3 Deployment
 
@@ -96,7 +100,7 @@ Provisioned:
 * S3 Bucket
 * Ownership Controls
 * Public Access Configuration
-* Website Configuration
+* Static Website Configuration
 
 ### 4. Website Content Deployment
 
@@ -132,31 +136,39 @@ Verified:
 
 ## Project Setup
 
-![Project Setup](screenshots/01-project-setup-and-first-push.png)
+![Project Setup](./screenshots/01-project-setup-and-first-push.png)
 
 ## Terraform Initialization & Validation
 
-![Terraform Init](screenshots/02-terraform-init-and-validate.png)
+![Terraform Init](./screenshots/02-terraform-init-and-validate.png)
 
 ## Terraform Plan - S3 Deployment
 
-![Terraform Plan](screenshots/03-terraform-plan-s3-bucket.png)
+![Terraform Plan](./screenshots/03-terraform-plan-s3-bucket.png)
 
 ## S3 Bucket Creation & State Verification
 
-![S3 Deployment](screenshots/04-s3-bucket-created-and-state-verification.png)
+![S3 Deployment](./screenshots/04-s3-bucket-created-and-state-verification.png)
 
 ## Terraform Plan - Website Upload
 
-![Website Upload Plan](screenshots/05-terraform-plan-upload-html-files.png)
+![Website Upload Plan](./screenshots/05-terraform-plan-upload-html-files.png)
 
 ## Website Files Uploaded
 
-![HTML Upload](screenshots/06-html-files-uploaded.png)
+![HTML Upload](./screenshots/06-html-files-uploaded.png)
 
 ## S3 Object Verification
 
-![S3 Verification](screenshots/07-s3-objects-verification.png)
+![S3 Verification](./screenshots/07-s3-objects-verification.png)
+
+## CloudFront Deployment
+
+![CloudFront Apply](./screenshots/08-cloudfront-apply-success.png)
+
+## CloudFront Outputs
+
+![CloudFront Outputs](./screenshots/09-cloudfront-outputs.png)
 
 ---
 
@@ -202,7 +214,7 @@ flowchart LR
 
 Progressed from fibre network engineering to security operations and technical support, building strong expertise in networking, system integration, troubleshooting, and infrastructure technologies.
 
-Currently focused on cloud engineering, designing scalable AWS solutions using Terraform, automation, serverless technologies, and cloud-native architecture principles.
+Currently focused on cloud engineering, designing scalable AWS solutions using Terraform, automation, cloud-native architecture principles, and AWS best practices.
 
 ---
 
@@ -232,8 +244,10 @@ Cloud Engineering Graduate | AWS & Terraform Practitioner
 
 Interested in Cloud Support Engineering, Cloud Operations, Site Reliability Engineering (SRE), Infrastructure Engineering, and Cloud Consulting opportunities.
 
-**LinkedIn**
+### LinkedIn
+
 https://www.linkedin.com/in/himanshu-himanshu-1a00a1a4/
 
-**GitHub**
+### GitHub
+
 https://github.com/cloudprohim
