@@ -1,11 +1,255 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>AWS S3 + CloudFront Static Site</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWS S3 + CloudFront Static Website</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+    margin: 0;
+    line-height: 1.6;
+}
+
+header {
+    background: #111827;
+    color: white;
+    padding: 45px 20px;
+    text-align: center;
+}
+
+main {
+    max-width: 1150px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+section {
+    background: white;
+    margin-bottom: 25px;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.tech-stack {
+    margin-top: 22px;
+}
+
+.badge {
+    display: inline-block;
+    background: #e0f2fe;
+    color: #0369a1;
+    padding: 8px 14px;
+    border-radius: 999px;
+    margin: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.flow {
+    display: grid;
+    grid-template-columns: 1fr 35px 1fr 35px 1fr 35px 1fr 35px 1fr;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.flow-card {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 18px 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.flow-card span {
+    display: block;
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+.arrow {
+    text-align: center;
+    font-size: 26px;
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.journey {
+    display: grid;
+    grid-template-columns: 1fr 35px 1fr 35px 1fr 35px 1fr;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.journey-card {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 18px 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.journey-card span {
+    display: block;
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+code {
+    background: #f3f4f6;
+    padding: 3px 6px;
+    border-radius: 5px;
+}
+
+ol li,
+ul li {
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #111827;
+    color: white;
+    margin-top: 40px;
+}
+
+@media (max-width: 900px) {
+    .flow,
+    .journey {
+        grid-template-columns: 1fr;
+    }
+
+    .arrow {
+        transform: rotate(90deg);
+    }
+}
+</style>
 </head>
+
 <body>
-    <h1>Welcome to my AWS Static Website</h1>
-    <p>Built with Terraform, S3 and CloudFront.</p>
-    <p>Author: Himanshu Himanshu</p>
+
+<header>
+    <h1>AWS S3 + CloudFront Static Website</h1>
+    <p>Production-style static website deployment using Terraform, Amazon S3, CloudFront CDN and Origin Access Control.</p>
+
+    <div class="tech-stack">
+        <span class="badge">🏗 Terraform</span>
+        <span class="badge">🪣 Amazon S3</span>
+        <span class="badge">🌍 CloudFront CDN</span>
+        <span class="badge">🔐 OAC Security</span>
+        <span class="badge">📦 GitHub</span>
+    </div>
+</header>
+
+<main>
+
+<section>
+    <h2>Architecture Flow</h2>
+
+    <div class="flow">
+        <div class="flow-card"><span>👤</span>User</div>
+        <div class="arrow">➜</div>
+        <div class="flow-card"><span>🌍</span>CloudFront</div>
+        <div class="arrow">➜</div>
+        <div class="flow-card"><span>🔐</span>OAC</div>
+        <div class="arrow">➜</div>
+        <div class="flow-card"><span>🪣</span>S3 Bucket</div>
+        <div class="arrow">➜</div>
+        <div class="flow-card"><span>📄</span>Website</div>
+    </div>
+</section>
+
+<section>
+    <h2>Project Overview</h2>
+    <p>
+        This project demonstrates a secure static website architecture deployed on AWS using Infrastructure as Code.
+        Website content is stored in Amazon S3 and delivered globally through CloudFront. Origin Access Control ensures
+        users access content through CloudFront instead of directly from the S3 bucket.
+    </p>
+</section>
+
+<section>
+    <h2>Step-by-Step Build Process</h2>
+    <ol>
+        <li>Created a GitHub repository.</li>
+        <li>Cloned the repository into Visual Studio Code.</li>
+        <li>Built Terraform project structure.</li>
+        <li>Configured AWS provider and variables.</li>
+        <li>Created an S3 bucket using Terraform.</li>
+        <li>Configured ownership controls and public access settings.</li>
+        <li>Enabled static website hosting.</li>
+        <li>Uploaded HTML files using Terraform-managed S3 objects.</li>
+        <li>Created CloudFront Origin Access Control.</li>
+        <li>Created CloudFront distribution.</li>
+        <li>Added secure S3 bucket policy for CloudFront access.</li>
+        <li>Verified website delivery through CloudFront.</li>
+    </ol>
+</section>
+
+<section>
+    <h2>Terraform Commands Used</h2>
+    <p><code>terraform init</code> – Initialize Terraform.</p>
+    <p><code>terraform fmt</code> – Format Terraform code.</p>
+    <p><code>terraform validate</code> – Validate configuration.</p>
+    <p><code>terraform plan</code> – Preview infrastructure changes.</p>
+    <p><code>terraform apply</code> – Deploy infrastructure.</p>
+    <p><code>terraform state list</code> – Verify Terraform-managed resources.</p>
+</section>
+
+<section>
+    <h2>Skills Demonstrated</h2>
+    <ul>
+        <li>Terraform Infrastructure as Code</li>
+        <li>Amazon S3 Static Website Hosting</li>
+        <li>CloudFront CDN Deployment</li>
+        <li>Origin Access Control Security</li>
+        <li>S3 Bucket Policies</li>
+        <li>Git & GitHub Workflow</li>
+        <li>AWS Architecture Design</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Technical Journey</h2>
+
+    <div class="journey">
+        <div class="journey-card"><span>🌐</span>Fibre Network Engineering</div>
+        <div class="arrow">➜</div>
+        <div class="journey-card"><span>🛡️</span>Security Operations</div>
+        <div class="arrow">➜</div>
+        <div class="journey-card"><span>🛠️</span>Technical Support</div>
+        <div class="arrow">➜</div>
+        <div class="journey-card"><span>☁️</span>Cloud Engineering</div>
+    </div>
+
+    <p>
+        Progressed from fibre network engineering to security operations and technical support, building strong expertise
+        in networking, system integration, and troubleshooting. Currently focused on cloud engineering, designing scalable
+        AWS solutions using Terraform and serverless technologies.
+    </p>
+</section>
+
+<section>
+    <h2>Author</h2>
+    <p>
+        Built by <strong>Himanshu Himanshu</strong> as part of a hands-on AWS Cloud Engineering portfolio project.
+    </p>
+</section>
+
+</main>
+
+<footer>
+    Deployed on AWS using Terraform | Amazon S3 + CloudFront Static Website
+</footer>
+
 </body>
 </html>
